@@ -4,6 +4,7 @@ solve(Items, Capacity, Solution, Weight, Profit) :-
     Weight =< Capacity,              
     profits(Solution, Profit).       
 
+% calculate total weight
 weight([Weight, _], Weight).
 weights([], 0).
 weights([X|Xs], Weight) :-
@@ -11,6 +12,7 @@ weights([X|Xs], Weight) :-
     weights(Xs, Ws),
     Weight is W + Ws.
 
+% calculate total profit
 profit([_, Profit], Profit).
 profits([], 0).
 profits([X|Xs], Profit) :-
@@ -18,6 +20,7 @@ profits([X|Xs], Profit) :-
     profits(Xs, Ps),
     Profit is P + Ps.
 
+% create all possible combinations
 subset([], []).
 subset([X|Xs], [X|Ys]) :-
     subset(Xs, Ys).
