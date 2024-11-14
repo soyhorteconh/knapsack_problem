@@ -34,7 +34,6 @@ profits([X|Xs], Profit) :-
     profits(Xs, Ps),
     Profit is P + Ps.
 
-
 % create all possible combinations
 subset([], []).
 subset([X|Xs], [X|Ys]) :-
